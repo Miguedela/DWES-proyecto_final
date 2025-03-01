@@ -11,7 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        //
+        Schema::create('tractores', function (Blueprint $table) {
+            $table->id();
+            $table->string('nombre_tractor');
+            $table->decimal('precio');
+            $table->longText('descripcion');
+            $table->integer('caballos_potencia');
+        });
     }
 
     /**
