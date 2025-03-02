@@ -12,37 +12,38 @@
                         <form action="{{ route('tractores.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
 
-                            <div class="mb-3">
+                            <div class="mb-3 form-floating">
+                                <input type="text" class="form-control rounded-2" id="nombre" name="nombre" placeholder="" required>
                                 <label for="nombre" class="form-label">Nombre</label>
-                                <input type="text" class="form-control" id="nombre" name="nombre" required>
                             </div>
 
-                            <div class="mb-3">
+                            <div class="mb-3 form-floating">
+                                <input type="text" class="form-control rounded-2" id="imagen" name="imagen" placeholder="" required>
                                 <label for="imagen" class="form-label">Imagen</label>
-                                <input type="text" class="form-control" id="imagen" name="imagen" required>
                             </div>
 
-                            <div class="mb-3">
+                            <div class="mb-3 form-floating">
+                                <input type="number" class="form-control rounded-2" id="anio_fabricacion" name="anio_fabricacion"
+                                    placeholder="" required>
                                 <label for="anio_fabricacion" class="form-label">Año de fabricación</label>
-                                <input type="number" class="form-control" id="anio_fabricacion" name="anio_fabricacion"
-                                    required>
                             </div>
 
-                            <div class="mb-3">
+                            <div class="mb-3 form-floating">
+                                <input type="number" class="form-control rounded-2" id="precio_mercado" name="precio_mercado"
+                                    step="0.01" placeholder="" required>
                                 <label for="precio_mercado" class="form-label">Precio de mercado</label>
-                                <input type="number" class="form-control" id="precio_mercado" name="precio_mercado"
-                                    step="0.01" required>
                             </div>
 
-                            <div class="mb-3">
+                            <div class="mb-3 form-floating">
+                                <input type="number" class="form-control rounded-2" id="potencia"
+                                    name="potencia" placeholder="" required>
                                 <label for="potencia" class="form-label">Potencia (HP)</label>
-                                <input type="number" class="form-control" id="potencia" name="potencia" required>
                             </div>
 
-                            <div class="mb-3">
-                                <label for="descripcion" class="form-label">Descripción</label>
-                                <textarea class="form-control" id="descripcion" name="descripcion" rows="4"
+                            <div class="mb-3 form-floating">
+                                <textarea style="min-height: 150px; border: 1px solid #747b88;" class="form-control" id="descripcion" name="descripcion" rows="4" placeholder=""
                                     required></textarea>
+                                <label for="descripcion" class="form-label">Descripción</label>
                             </div>
 
                             <div class="text-center">
