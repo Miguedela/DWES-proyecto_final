@@ -3,19 +3,18 @@
 @section('content')
     <div class="container">
         <h1 class="mb-4 text-center text-white fw-bolder fs-1">Lista de Tractores</h1>
-        
-        <!-- Botón para crear un nuevo tractor -->
+
         <div class="mb-4 text-center">
             <a href="{{ route('tractores.create') }}" class="btn btn-success">Crear Nuevo Tractor</a>
         </div>
 
         @if($tractores->isEmpty())
-            <p class="text-center">No hay tractores disponibles.</p>
+            <p class="text-center text-gray-300">No hay tractores disponibles.</p>
         @else
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
                 @foreach($tractores as $tractor)
                     <div class="col">
-                        <div class="card h-100 shadow-sm">
+                        <div class="card h-100 shadow-sm bg-gray-800 text-white border-gray-700">
                             <img src="{{ asset($tractor->imagen) }}" class="card-img-top" alt="Imagen de {{ $tractor->nombre }}">
                             <div class="card-body">
                                 <h5 class="card-title">{{ $tractor->nombre }}</h5>
@@ -24,8 +23,7 @@
                                 <p class="card-text"><strong>Potencia:</strong> {{ $tractor->potencia }} HP</p>
                                 <p class="card-text">{{ Str::limit($tractor->descripcion, 100, '...') }}</p>
                             </div>
-                            <div class="card-footer text-center">
-                                <!-- Botón para abrir el modal -->
+                            <div class="card-footer text-center bg-gray-700 border-top-gray-600">
                                 <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                                     data-bs-target="#tractorModal{{ $tractor->id }}">
                                     Ver más
@@ -42,14 +40,14 @@
                         </div>
                     </div>
 
-                    <!-- Modal -->
                     <div class="modal fade" id="tractorModal{{ $tractor->id }}" tabindex="-1"
                         aria-labelledby="tractorModalLabel{{ $tractor->id }}" aria-hidden="true">
                         <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
+                            <div class="modal-content bg-gray-800 text-white">
+                                <div class="modal-header bg-gray-700 border-bottom-gray-600">
                                     <h5 class="modal-title" id="tractorModalLabel{{ $tractor->id }}">{{ $tractor->nombre }}</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
                                     <img src="{{ asset($tractor->imagen) }}" class="img-fluid mb-3"
@@ -59,7 +57,7 @@
                                     <p><strong>Potencia:</strong> {{ $tractor->potencia }} HP</p>
                                     <p><strong>Descripción:</strong> {{ $tractor->descripcion }}</p>
                                 </div>
-                                <div class="modal-footer">
+                                <div class="modal-footer bg-gray-700 border-top-gray-600">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                                 </div>
                             </div>

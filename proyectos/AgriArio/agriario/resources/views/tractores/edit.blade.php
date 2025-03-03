@@ -50,7 +50,8 @@
 
                             <div class="mb-3 form-floating">
                                 <input type="text" class="form-control rounded-2" id="imagen" name="imagen" value="{{ $tractor->imagen }}" required>
-                                <label for="imagen" class="form-label">Imagen</label>
+                                <label for="imagen" class="form-label">Imagen (ingrese la url de una imagen de un servicio
+                                    del estilo Cloudinary)</label>
                             </div>
 
                             <div class="text-center">
