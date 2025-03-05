@@ -12,7 +12,7 @@ class TractorController extends Controller
      */
     public function index()
     {
-        $tractores = Tractor::all(); // Recuperar todos los tractores
+        $tractores = Tractor::paginate(6); // Recuperar todos los tractores
         return view('tractores.index', compact('tractores'));
     }
 
