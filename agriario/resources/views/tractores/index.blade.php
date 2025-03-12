@@ -5,6 +5,7 @@
         <h1 class="mb-4 text-center text-white fw-bolder fs-1">Lista de Tractores</h1>
 
         <div class="mb-4 text-center">
+            <!-- Mostrar solo si el usuario es admin -->
             <a href="{{ route('tractores.create') }}" class="btn btn-success">Crear Nuevo Tractor</a>
         </div>
 
@@ -32,14 +33,17 @@
                                         Ver más
                                     </button>
 
-                                    <a href="{{ route('tractores.edit', $tractor->id) }}" class="btn btn-warning">Editar</a>
+                                    <!-- Mostrar solo si el usuario es admin -->
+                                    @if(auth()->user()->role === 'admin')
+                                        <a href="{{ route('tractores.edit', $tractor->id) }}" class="btn btn-warning">Editar</a>
 
-                                    <form action="{{ route('tractores.destroy', $tractor->id) }}" method="POST"
-                                        style="display:inline;">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="btn btn-danger">Eliminar</button>
-                                    </form>
+                                        <form action="{{ route('tractores.destroy', $tractor->id) }}" method="POST"
+                                            style="display:inline;">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-danger">Eliminar</button>
+                                        </form>
+                                    @endif
                                 </div>
                             </div>
                         </div>

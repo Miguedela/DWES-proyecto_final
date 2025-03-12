@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 11-03-2025 a las 16:20:05
+-- Tiempo de generación: 12-03-2025 a las 12:39:03
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -35,6 +35,18 @@ CREATE TABLE `cache` (
   `value` mediumtext NOT NULL,
   `expiration` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `cache`
+--
+
+INSERT INTO `cache` (`key`, `value`, `expiration`) VALUES
+('laravel_cache_migue@gmail.com|127.0.0.1', 'i:1;', 1741779030),
+('laravel_cache_migue@gmail.com|127.0.0.1:timer', 'i:1741779030;', 1741779030),
+('laravel_cache_root@gmail.com|127.0.0.1', 'i:1;', 1741779004),
+('laravel_cache_root@gmail.com|127.0.0.1:timer', 'i:1741779004;', 1741779004),
+('laravel_cache_rootroot@gmail.com|127.0.0.1', 'i:1;', 1741778996),
+('laravel_cache_rootroot@gmail.com|127.0.0.1:timer', 'i:1741778996;', 1741778996);
 
 -- --------------------------------------------------------
 
@@ -121,10 +133,10 @@ CREATE TABLE `migrations` (
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-(8, '0001_01_01_000000_create_users_table', 1),
-(9, '0001_01_01_000001_create_cache_table', 1),
-(10, '0001_01_01_000002_create_jobs_table', 1),
-(11, '2025_03_02_165101_create_tractores_table', 1);
+(12, '0001_01_01_000000_create_users_table', 1),
+(13, '0001_01_01_000001_create_cache_table', 1),
+(14, '0001_01_01_000002_create_jobs_table', 1),
+(15, '2025_03_02_165101_create_tractores_table', 1);
 
 -- --------------------------------------------------------
 
@@ -160,8 +172,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('J4a1mdzJzCAgVwpI5Puyye8qiZjuJsvmseatGvZe', 1, '127.0.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiNjRKR1llY3ozd3VvVjUxdGs5V2RxVHJHV1VteTA4TUVaOEdGQjBibyI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC90cmFjdG9yZXMiO31zOjM6InVybCI7YTowOnt9czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTt9', 1741202234),
-('KsC8L7KjsfaoyjAFyAvdbtjZqfvG1uGswJf4uHvp', 1, '127.0.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiSERkT0kyWEhEQU5PbnIya3BxVWJJQjFJWTByOUhzemQ3WUFrMFY0ciI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC90cmFjdG9yZXMiO31zOjM6InVybCI7YTowOnt9czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTt9', 1741203736);
+('ufZOou2fcWQHkMXHstKc788wkhbkGZ0skA0rbSei', 1, '127.0.0.1', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:136.0) Gecko/20100101 Firefox/136.0', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoieWZkc0ZydHFiUXc4dENDQWJJQ1hSSTBTNlE3d0hkZDVJWmdJeFN5cCI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC90cmFjdG9yZXMiO31zOjM6InVybCI7YTowOnt9czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTt9', 1741779507);
 
 -- --------------------------------------------------------
 
@@ -187,20 +198,15 @@ CREATE TABLE `tractores` (
 --
 
 INSERT INTO `tractores` (`id`, `nombre`, `anio_fabricacion`, `precio_mercado`, `potencia`, `descripcion`, `imagen`, `created_at`, `updated_at`) VALUES
-(1, 'John Deere 2020', '1967', 4000.00, 60, 'John Deere 2020 fue fabricado entre 1967 y 1972, y está equipado con un motor de cuatro cilindros 4202 con una cilindrada de 3320 cm³. La potencia máxima del motor es de 60 CV a 2500 rpm, y el par motor alcanza los 194 Nm a 1500 rpm.', 'https://res.cloudinary.com/dascvtkd1/image/upload/v1740935148/b2d704c8-d678-4eb5-b2fa-d1297ee0f7ef.png', NULL, NULL),
-(4, 'John Deere 2020', '1967', 4000.00, 60, 'John Deere 2020 fue fabricado entre 1967 y 1972, y está equipado con un motor de cuatro cilindros 4202 con una cilindrada de 3320 cm³. La potencia máxima del motor es de 60 CV a 2500 rpm, y el par motor alcanza los 194 Nm a 1500 rpm.', 'https://res.cloudinary.com/dascvtkd1/image/upload/v1740935148/b2d704c8-d678-4eb5-b2fa-d1297ee0f7ef.png', NULL, NULL),
-(5, 'John Deere 2020', '1967', 4000.00, 60, 'John Deere 2020 fue fabricado entre 1967 y 1972, y está equipado con un motor de cuatro cilindros 4202 con una cilindrada de 3320 cm³. La potencia máxima del motor es de 60 CV a 2500 rpm, y el par motor alcanza los 194 Nm a 1500 rpm.', 'https://res.cloudinary.com/dascvtkd1/image/upload/v1740935148/b2d704c8-d678-4eb5-b2fa-d1297ee0f7ef.png', NULL, NULL),
-(6, 'John Deere 2020', '1967', 4000.00, 60, 'John Deere 2020 fue fabricado entre 1967 y 1972, y está equipado con un motor de cuatro cilindros 4202 con una cilindrada de 3320 cm³. La potencia máxima del motor es de 60 CV a 2500 rpm, y el par motor alcanza los 194 Nm a 1500 rpm.', 'https://res.cloudinary.com/dascvtkd1/image/upload/v1740935148/b2d704c8-d678-4eb5-b2fa-d1297ee0f7ef.png', NULL, NULL),
-(7, 'John Deere 2020', '1967', 4000.00, 60, 'John Deere 2020 fue fabricado entre 1967 y 1972, y está equipado con un motor de cuatro cilindros 4202 con una cilindrada de 3320 cm³. La potencia máxima del motor es de 60 CV a 2500 rpm, y el par motor alcanza los 194 Nm a 1500 rpm.', 'https://res.cloudinary.com/dascvtkd1/image/upload/v1740935148/b2d704c8-d678-4eb5-b2fa-d1297ee0f7ef.png', NULL, NULL),
-(8, 'John Deere 2020', '1967', 4000.00, 60, 'John Deere 2020 fue fabricado entre 1967 y 1972, y está equipado con un motor de cuatro cilindros 4202 con una cilindrada de 3320 cm³. La potencia máxima del motor es de 60 CV a 2500 rpm, y el par motor alcanza los 194 Nm a 1500 rpm.', 'https://res.cloudinary.com/dascvtkd1/image/upload/v1740935148/b2d704c8-d678-4eb5-b2fa-d1297ee0f7ef.png', NULL, NULL),
-(9, 'John Deere 2020', '1967', 4000.00, 60, 'John Deere 2020 fue fabricado entre 1967 y 1972, y está equipado con un motor de cuatro cilindros 4202 con una cilindrada de 3320 cm³. La potencia máxima del motor es de 60 CV a 2500 rpm, y el par motor alcanza los 194 Nm a 1500 rpm.', 'https://res.cloudinary.com/dascvtkd1/image/upload/v1740935148/b2d704c8-d678-4eb5-b2fa-d1297ee0f7ef.png', NULL, NULL),
-(10, 'John Deere 2020', '1967', 4000.00, 60, 'John Deere 2020 fue fabricado entre 1967 y 1972, y está equipado con un motor de cuatro cilindros 4202 con una cilindrada de 3320 cm³. La potencia máxima del motor es de 60 CV a 2500 rpm, y el par motor alcanza los 194 Nm a 1500 rpm.', 'https://res.cloudinary.com/dascvtkd1/image/upload/v1740935148/b2d704c8-d678-4eb5-b2fa-d1297ee0f7ef.png', NULL, NULL),
-(11, 'John Deere 2020', '1967', 4000.00, 60, 'John Deere 2020 fue fabricado entre 1967 y 1972, y está equipado con un motor de cuatro cilindros 4202 con una cilindrada de 3320 cm³. La potencia máxima del motor es de 60 CV a 2500 rpm, y el par motor alcanza los 194 Nm a 1500 rpm.', 'https://res.cloudinary.com/dascvtkd1/image/upload/v1740935148/b2d704c8-d678-4eb5-b2fa-d1297ee0f7ef.png', NULL, NULL),
-(12, 'John Deere 2020', '1967', 4000.00, 60, 'John Deere 2020 fue fabricado entre 1967 y 1972, y está equipado con un motor de cuatro cilindros 4202 con una cilindrada de 3320 cm³. La potencia máxima del motor es de 60 CV a 2500 rpm, y el par motor alcanza los 194 Nm a 1500 rpm.', 'https://res.cloudinary.com/dascvtkd1/image/upload/v1740935148/b2d704c8-d678-4eb5-b2fa-d1297ee0f7ef.png', NULL, NULL),
-(13, 'John Deere 2020', '1967', 4000.00, 60, 'John Deere 2020 fue fabricado entre 1967 y 1972, y está equipado con un motor de cuatro cilindros 4202 con una cilindrada de 3320 cm³. La potencia máxima del motor es de 60 CV a 2500 rpm, y el par motor alcanza los 194 Nm a 1500 rpm.', 'https://res.cloudinary.com/dascvtkd1/image/upload/v1740935148/b2d704c8-d678-4eb5-b2fa-d1297ee0f7ef.png', NULL, NULL),
-(14, 'John Deere 2020', '1967', 4000.00, 60, 'John Deere 2020 fue fabricado entre 1967 y 1972, y está equipado con un motor de cuatro cilindros 4202 con una cilindrada de 3320 cm³. La potencia máxima del motor es de 60 CV a 2500 rpm, y el par motor alcanza los 194 Nm a 1500 rpm.', 'https://res.cloudinary.com/dascvtkd1/image/upload/v1740935148/b2d704c8-d678-4eb5-b2fa-d1297ee0f7ef.png', NULL, NULL),
-(15, 'John Deere 2020', '1967', 4000.00, 60, 'John Deere 2020 fue fabricado entre 1967 y 1972, y está equipado con un motor de cuatro cilindros 4202 con una cilindrada de 3320 cm³. La potencia máxima del motor es de 60 CV a 2500 rpm, y el par motor alcanza los 194 Nm a 1500 rpm.', 'https://res.cloudinary.com/dascvtkd1/image/upload/v1740935148/b2d704c8-d678-4eb5-b2fa-d1297ee0f7ef.png', NULL, NULL),
-(16, 'John Deere 2020', '1967', 4000.00, 60, 'John Deere 2020 fue fabricado entre 1967 y 1972, y está equipado con un motor de cuatro cilindros 4202 con una cilindrada de 3320 cm³. La potencia máxima del motor es de 60 CV a 2500 rpm, y el par motor alcanza los 194 Nm a 1500 rpm.', 'https://res.cloudinary.com/dascvtkd1/image/upload/v1740935148/b2d704c8-d678-4eb5-b2fa-d1297ee0f7ef.png', NULL, NULL);
+(1, 'Tractor 7R 330', '2020', 70000.00, 330, 'Tractor de alta gama con motor potente y gran capacidad de trabajo para terrenos difíciles.', 'https://res.cloudinary.com/dascvtkd1/image/upload/v1741777438/7R_330_jbxfwd.png', '2025-03-12 11:35:45', '2025-03-12 11:35:45'),
+(2, 'Tractor 7R 350', '2021', 75000.00, 350, 'Tractor de última tecnología con motor ecológico y capacidad para grandes cultivos.', 'https://res.cloudinary.com/dascvtkd1/image/upload/v1741777438/7R_350_fgpxxk.png', '2025-03-12 11:35:45', '2025-03-12 11:35:45'),
+(3, 'Tractor 7R 310', '2019', 68000.00, 310, 'Tractor robusto y eficiente, ideal para agricultores que buscan alto rendimiento y economía.', 'https://res.cloudinary.com/dascvtkd1/image/upload/v1741777332/7R_310_n9gqze.png', '2025-03-12 11:35:45', '2025-03-12 11:35:45'),
+(4, 'Tractor 7R 290', '2018', 65000.00, 290, 'Tractor económico para pequeños y medianos cultivos, ideal para terrenos medianos.', 'https://res.cloudinary.com/dascvtkd1/image/upload/v1741777273/7R_290_yuekgj.png', '2025-03-12 11:35:45', '2025-03-12 11:35:45'),
+(5, 'Tractor 7R 270', '2020', 62000.00, 270, 'Tractor de excelente relación calidad-precio, diseñado para operaciones agrícolas de tamaño medio.', 'https://res.cloudinary.com/dascvtkd1/image/upload/v1741777096/7R_270_aygt1j.png', '2025-03-12 11:35:45', '2025-03-12 11:35:45'),
+(6, 'Tractor Modelo F', '2023', 55000.00, 350, 'Tractor de última tecnología con motor ecológico y alta eficiencia.', 'https://res.cloudinary.com/dascvtkd1/image/upload/v1741776408/20b7ed76-91a3-417a-b2dd-02a0b165bbf9.png', '2025-03-12 11:35:45', '2025-03-12 11:35:45'),
+(7, 'Tractor Modelo G', '2020', 46000.00, 230, 'Tractor resistente, ideal para terrenos difíciles y cultivos extensivos.', 'https://res.cloudinary.com/dascvtkd1/image/upload/v1741776381/317aa5e6-8edc-42b7-b934-abd37d0b3685.png', '2025-03-12 11:35:45', '2025-03-12 11:35:45'),
+(8, 'Tractor Modelo H', '2021', 47000.00, 240, 'Tractor de gran rendimiento, perfecto para tareas agrícolas de gran escala.', 'https://res.cloudinary.com/dascvtkd1/image/upload/v1741776367/f2ea349f-7b18-4457-a2d0-2b98b86c8067.png', '2025-03-12 11:35:45', '2025-03-12 11:35:45'),
+(9, 'Tractor Modelo I', '2022', 49000.00, 260, 'Tractor moderno con alta eficiencia en consumo de combustible.', 'https://res.cloudinary.com/dascvtkd1/image/upload/v1741776347/fe2ff95b-da68-4ffe-89d5-6ceff71b8d4b.png', '2025-03-12 11:35:45', '2025-03-12 11:35:45');
 
 -- --------------------------------------------------------
 
@@ -216,6 +222,7 @@ CREATE TABLE `users` (
   `email_verified_at` timestamp NULL DEFAULT NULL,
   `password` varchar(255) NOT NULL,
   `remember_token` varchar(100) DEFAULT NULL,
+  `role` varchar(255) NOT NULL DEFAULT 'user',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -224,8 +231,9 @@ CREATE TABLE `users` (
 -- Volcado de datos para la tabla `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'root', 'root@gmail.com', NULL, '$2y$12$.TqYKEpElCJctRdxQVTA4uf5nhPkwnaRapK1gdDEYyPFPKEwfjuOq', 'svh0wci47qiOSVt8yLFj1QVTXNvRCvf92ueDU9YYz3sArfz4pVNEjcPR3YeZ', '2025-03-02 16:13:51', '2025-03-02 16:13:51');
+INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `role`, `created_at`, `updated_at`) VALUES
+(1, 'Admin', 'admin@gmail.com', NULL, '$2y$12$DLAw/0Y5vQnzptQpT/vdZ.IA.iWb8zoF.Fx8.3qimAdt.6hnZRtzK', NULL, 'admin', '2025-03-12 10:35:13', '2025-03-12 10:35:13'),
+(2, 'Migue', 'migue@gmail.com', NULL, '$2y$12$eFmPj7i7GKDjQjc4KO68WeR0qovUCjLRzrGttgQW573MDGhLqrHTi', NULL, 'user', '2025-03-12 10:37:31', '2025-03-12 10:37:31');
 
 --
 -- Índices para tablas volcadas
@@ -316,19 +324,19 @@ ALTER TABLE `jobs`
 -- AUTO_INCREMENT de la tabla `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de la tabla `tractores`
 --
 ALTER TABLE `tractores`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

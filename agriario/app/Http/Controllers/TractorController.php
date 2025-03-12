@@ -29,23 +29,28 @@ class TractorController extends Controller
      */
     public function store(Request $request)
     {
+        // Depuración para ver los datos que llegan
+        // dd($request->all());
+
         $request->validate([
             'nombre' => 'required|max:255',
-            'anio_fabricacion' => 'required|integer',
+            'anio_fabricacion' => 'required|digits:4|integer|min:1900|max:' . date('Y'),
             'precio_mercado' => 'required|numeric',
             'potencia' => 'required|integer',
             'descripcion' => 'required',
-            'imagen' => 'required|url', // Validar que la imagen sea una URL
+            'imagen' => 'required|string',
         ]);
 
-        Tractor::create([
+        $tractor = Tractor::create([
             'nombre' => $request->nombre,
             'anio_fabricacion' => $request->anio_fabricacion,
             'precio_mercado' => $request->precio_mercado,
             'potencia' => $request->potencia,
             'descripcion' => $request->descripcion,
-            'imagen' => $request->imagen, // Guardar la URL de la imagen
+            'imagen' => $request->imagen,
         ]);
+
+        // dd($tractor);
 
         return redirect()->route('tractores.index')->with('success', 'Tractor añadido exitosamente');
     }
@@ -72,28 +77,29 @@ class TractorController extends Controller
      */
     public function update(Request $request, $id)
     {
+        // Depuración para ver los datos que llegan
+        // dd($request->all());
+
         $request->validate([
             'nombre' => 'required|max:255',
-            'anio_fabricacion' => 'required|integer',
+            'anio_fabricacion' => 'required|digits:4|integer|min:1900|max:' . date('Y'),
             'precio_mercado' => 'required|numeric',
             'potencia' => 'required|integer',
             'descripcion' => 'required',
-            'imagen' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // Imagen opcional
+            'imagen' => 'nullable|string|url',
         ]);
 
         $tractor = Tractor::findOrFail($id);
 
-        if ($request->hasFile('imagen')) {
-            $imagePath = $request->file('imagen')->store('images', 'public');
-            $tractor->imagen = $imagePath;
-        }
-
+        // Actualizar los campos del tractor
         $tractor->nombre = $request->nombre;
         $tractor->anio_fabricacion = $request->anio_fabricacion;
         $tractor->precio_mercado = $request->precio_mercado;
         $tractor->potencia = $request->potencia;
         $tractor->descripcion = $request->descripcion;
+        $tractor->imagen = $request->imagen;
 
+        // Guardar los cambios en la base de datos
         $tractor->save();
 
         return redirect()->route('tractores.index')->with('success', 'Tractor actualizado exitosamente');

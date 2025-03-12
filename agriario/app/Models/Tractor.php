@@ -9,6 +9,14 @@ class Tractor extends Model
 {
     use HasFactory;
 
-    protected $table = 'tractores'; // Especifica el nombre correcto de la tabla
-    protected $fillable = ['nombre', 'anio_fabricacion', 'precio_mercado', 'potencia', 'descripcion', 'imagen'];
+    protected $fillable = [
+        'nombre',
+        'anio_fabricacion',
+        'precio_mercado',
+        'potencia',
+        'descripcion',
+        'imagen',
+    ];
+    
+    protected $table = 'tractores';
 }
