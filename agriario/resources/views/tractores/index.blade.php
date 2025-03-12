@@ -5,7 +5,6 @@
         <h1 class="mb-4 text-center text-white fw-bolder fs-1">Lista de Tractores</h1>
 
         <div class="mb-4 text-center">
-            <!-- Mostrar solo si el usuario es admin -->
             <a href="{{ route('tractores.create') }}" class="btn btn-success">Crear Nuevo Tractor</a>
         </div>
 
