@@ -12,9 +12,9 @@ return new class extends Migration {
             $table->string('nombre');
             $table->year('anio_fabricacion');
             $table->decimal('precio_mercado', 10, 2);
-            $table->integer('potencia'); // En HP o kW según lo que necesites
+            $table->integer('potencia');
             $table->text('descripcion')->nullable();
-            $table->string('imagen')->nullable(); // Guardará la ruta de la imagen
+            $table->string('imagen')->default('https://res.cloudinary.com/dascvtkd1/image/upload/v1741811514/005f4bee-169d-4f06-acb2-7eed09f8d580.png');
             $table->timestamps();
         });
     }

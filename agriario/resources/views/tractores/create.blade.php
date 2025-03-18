@@ -19,8 +19,7 @@
                             </div>
 
                             <div class="mb-3 form-floating">
-                                <input type="text" class="form-control rounded-2" id="imagen" name="imagen" placeholder=""
-                                    required>
+                                <input type="text" class="form-control rounded-2" id="imagen" name="imagen" placeholder="">
                                 <label for="imagen" class="form-label">Imagen (ingrese la url de una imagen de un servicio
                                     del estilo Cloudinary)</label>
                             </div>

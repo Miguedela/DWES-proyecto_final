@@ -38,17 +38,28 @@ class TractorController extends Controller
             'precio_mercado' => 'required|numeric',
             'potencia' => 'required|integer',
             'descripcion' => 'required',
-            'imagen' => 'required|string',
+            'imagen' => 'string|nullable',
         ]);
 
-        $tractor = Tractor::create([
-            'nombre' => $request->nombre,
-            'anio_fabricacion' => $request->anio_fabricacion,
-            'precio_mercado' => $request->precio_mercado,
-            'potencia' => $request->potencia,
-            'descripcion' => $request->descripcion,
-            'imagen' => $request->imagen,
-        ]);
+        if ($request->imagen) {
+            $tractor = Tractor::create([
+                'nombre' => $request->nombre,
+                'anio_fabricacion' => $request->anio_fabricacion,
+                'precio_mercado' => $request->precio_mercado,
+                'potencia' => $request->potencia,
+                'descripcion' => $request->descripcion,
+                'imagen' => $request->imagen,
+            ]);
+        } else {
+            $tractor = Tractor::create([
+                'nombre' => $request->nombre,
+                'anio_fabricacion' => $request->anio_fabricacion,
+                'precio_mercado' => $request->precio_mercado,
+                'potencia' => $request->potencia,
+                'descripcion' => $request->descripcion,
+                'imagen' => 'https://res.cloudinary.com/dascvtkd1/image/upload/v1741811514/005f4bee-169d-4f06-acb2-7eed09f8d580.png',
+            ]);
+        }
 
         // dd($tractor);
 
